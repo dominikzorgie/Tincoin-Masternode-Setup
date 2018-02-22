@@ -10,7 +10,7 @@ echo "**********************************************************************"
 echo && echo && echo
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "!                                                 !"
-echo "! Make sure you double check before hitting enter !"
+echo "! DOMINIK ZORGIE iHHA!"
 echo "!                                                 !"
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo && echo && echo
@@ -20,7 +20,7 @@ sleep 3
 systemctl --version >/dev/null 2>&1 || { echo "systemd is required. Are you using Ubuntu 16.04?"  >&2; exit 1; }
 
 # Gather input from user
-read -e -p "Masternode Private Key (e.g. 7edfjLCUzGczZi3JQw8GHp434R9kNY33eFyMGeKRymkB56G4324h) : " key
+read -e -p "Masternode genkey (e.g. 7edfjLCUzGczZi3JQw8GHp434R9kNY33eFyMGeKRymkB56G4324h) : " key
 if [[ "$key" == "" ]]; then
     echo "WARNING: No private key entered, exiting!!!"
     echo && exit
@@ -30,9 +30,9 @@ echo && echo "Pressing ENTER will use the default value for the next prompts."
 echo && sleep 3
 read -e -p "Add swap space? (Recommended) [Y/n] : " add_swap
 if [[ ("$add_swap" == "y" || "$add_swap" == "Y" || "$add_swap" == "") ]]; then
-    read -e -p "Swap Size [2G] : " swap_size
+    read -e -p "Swap Size [10G] : " swap_size
     if [[ "$swap_size" == "" ]]; then
-        swap_size="2G"
+        swap_size="10G"
     fi
 fi    
 read -e -p "Install Fail2ban? (Recommended) [Y/n] : " install_fail2ban
